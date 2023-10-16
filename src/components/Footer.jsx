@@ -46,7 +46,7 @@ const Footer = () => {
         <p className="pb-4">© 2023 Bottom. All Rights Reserved.</p>
         <div className="flex gap-8">
           <div>
-            <a href="https://github.com/fazil490">
+            <a href="https://github.com/fazil490/ecommerce-webapp">
               <FaGithub className="fill-current text-sage w-5 h-5" />
             </a>
           </div>
