@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { products } from "../../../db/products";
 
-const ProductCard = () => {
+const Card = () => {
 
   return (
     <div className="my-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center w-[100%]">
@@ -38,4 +38,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default Card;

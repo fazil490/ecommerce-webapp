@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFilter } from "react-icons/fa";
-import ProductCard from "./ProductCard";
+import Card from "./Card";
 import FilterSideBar from "./FilterSideBar";
 
 const ProductsList = () => {
@@ -16,7 +16,7 @@ const ProductsList = () => {
             <input className="px-4" type="text" placeholder="Search"></input>
           </div>
 
-          <ProductCard />
+          <Card />
         {/* </div> */}
       </div>
     </div>
