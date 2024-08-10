@@ -2,25 +2,34 @@ import React from "react";
 
 const FilterSideBar = () => {
   return (
-    <aside className="hidden xl:inline-block m-8">
+    <>
       <div className="flex justify-between">
-        <h2>Filters</h2>
-        <button>Clear</button>
+        <h2 className="text-2xl font-semibold">Filters</h2>
+        <button className="hover:underline">Clear</button>
       </div>
       <div>
-        <h3>Price</h3>
-        <div className="flex gap-4">
+      <input className="px-4" type="text" placeholder="Search" />
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold">Price</h3>
+        <div className="flex gap-16 pt-4">
           <p>1000</p>
           <p>1500</p>
           <p>2000</p>
         </div>
         <div>
-          <input type="range" min="1000" max="4000" step="200" />
+          <input
+            className="w-[100%]"
+            type="range"
+            min="1000"
+            max="4000"
+            step="200"
+          />
         </div>
       </div>
       <div>
-        <h3>Sort by</h3>
-        <div>
+        <h3 className="text-lg font-semibold">Sort by</h3>
+        <div className="grid grid-cols-1 gap-2 px-2">
           <label>
             <input type="radio" name="sort" />
             <span>Price - High to Low</span>
@@ -32,8 +41,8 @@ const FilterSideBar = () => {
         </div>
       </div>
       <div>
-        <h3>Rating</h3>
-        <div>
+        <h3 className="text-lg font-semibold">Rating</h3>
+        <div className="grid grid-cols-1 gap-2 px-2">
           <label>
             <input type="radio" name="rating" value="4" />
             <span>4 Stars and above</span>
@@ -45,8 +54,8 @@ const FilterSideBar = () => {
         </div>
       </div>
       <div>
-        <h3>Category</h3>
-        <div>
+        <h3 className="text-lg font-semibold">Category</h3>
+        <div className="grid grid-cols-1 gap-2 px-2">
           <label>
             <input type="checkbox" value="FORMALS" />
             <span>Formals</span>
@@ -69,7 +78,7 @@ const FilterSideBar = () => {
           </label>
         </div>
       </div>
-    </aside>
+    </>
   );
 };
 

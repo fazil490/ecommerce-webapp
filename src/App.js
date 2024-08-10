@@ -1,14 +1,23 @@
 import { Route, Routes } from "react-router-dom"
-import Home from "./pages/home/Home"
-import Products from "./pages/products/Products"
-import Wishlist from "./pages/wishlist/Wishlist"
-import Cart from "./pages/cart/Cart"
-import Checkout from "./pages/checkout/Checkout"
-import Profile from "./pages/profile/Profile"
+import Home from "./pages/Home"
+import Products from "./pages/Products"
+import Wishlist from "./pages/Wishlist"
+import Cart from "./pages/Cart"
+import Checkout from "./pages/Checkout"
+import Profile from "./pages/Profile"
+import MobileNavbar from "./components/MobileNavbar"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="App font-poppins">
+    <div className="App font-k2d bg-gray-50">
+      <div className="lg:hidden sticky top-0 z-10">
+        <MobileNavbar />
+      </div>
+      <div className="hidden  sticky top-0 z-10 lg:inline-block w-[100%]">
+        <Navbar />
+      </div>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<Products/>} />
@@ -17,6 +26,7 @@ function App() {
         <Route path="/checkout" element={<Checkout/>} />
         <Route path="/profile" element={<Profile/>} />
       </Routes>
+      <Footer />
     </div>
   );
 }

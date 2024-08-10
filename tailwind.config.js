@@ -4,22 +4,23 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        sage: "#555843",
-        creame: "#F8F4EA",
-        red: "#D80032",
-        grey: "#393E46",
+        // green: "#15803D",
+        // red: "#E11D48",
+        // grey: "#393E46",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        k2d: "K2D",
       },
       backgroundColor: {
-        sage: "#555843",
-        creame: "#F8F4EA",
-        red: "#D80032",
+        green: "#15803D",
+        lightGreen: "#DCFCE7",
+        red: "#E11D48",
+        grey: "#F9FAFB",
+        white: "#ffffff",
       },
       borderColor: {
-        sage: "#555843",
-        creame: "#F8F4EA",
+        red: "#E11D48",
       },
     },
   },
