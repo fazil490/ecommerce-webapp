@@ -11,7 +11,7 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="App font-k2d bg-gray-50">
+    <div className="App font-Montserrat tracking-tight bg-gray-50">
       <div className="lg:hidden sticky top-0 z-10">
         <MobileNavbar />
       </div>

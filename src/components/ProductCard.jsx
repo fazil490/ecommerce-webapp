@@ -2,7 +2,7 @@ import { FiHeart } from "react-icons/fi";
 
 const ProductCard = ({ item }) => {
   return (
-    <div key={item?._id} className="relative w-[220px] rounded-lg shadow-md">
+    <div key={item?._id} className="relative w-[230px] rounded-lg shadow-md cursor-pointer transition-transform hover:-translate-y-[6px] duration-300">
       <img
         className="w-[100%] h-[170px] border-b-2 border-creame rounded-t-lg"
         src={item?.img}
@@ -20,7 +20,7 @@ const ProductCard = ({ item }) => {
         <h2 className="font-medium text-gray-500 text-[15px]">
           {item?.brandName}
         </h2>
-        <h2 className="font-medium text-gray-800 text-[17px]">
+        <h2 className="font-medium text-gray-800 text-[17px] tracking-tighter">
           {item?.productName}
         </h2>
         <div className="flex gap-2 items-center">

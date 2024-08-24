@@ -9,8 +9,7 @@ module.exports = {
         // grey: "#393E46",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-        k2d: "K2D",
+        Montserrat: "Montserrat",
       },
       backgroundColor: {
         green: "#15803D",
