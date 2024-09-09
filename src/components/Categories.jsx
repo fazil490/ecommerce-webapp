@@ -10,7 +10,7 @@ const Categories = () => {
       </h2>
       <div className="mt-10 flex flex-wrap justify-center items-center gap-6 md:w-[80%] mx-auto lg:w-[70%] lg:gap-10 xl:w-1/2">
         {categories.map((category, i) => (
-          <Link key={i}>
+          <Link to={`/products/${category?.description}`} key={i}>
             <div className="rounded-xl w-[150px] h-[120px] md:w-[165px] md:h-[135px] lg:w-[190px] lg:h-[160px] relative transition-all shadow-md">
               <img className="w-full h-full rounded-xl" src={category.img} alt="Categories" />
               <div className="w-full h-full text-white bg-black opacity-0 hover:opacity-100 bg-opacity-0 hover:bg-opacity-60 duration-500 tracking-wider rounded-xl absolute top-0 flex items-center text-lg justify-center">{category.categoryName}</div>
