@@ -59,7 +59,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    bestSelling: true,
+    bestSelling: false,
     brandName: "Woodland",
     productName: "Leather Tan Loafer",
     mrp: 1799,
@@ -211,20 +211,7 @@ export const products = [
     rating: "4.8",
     description: "Tan formal shoe for men",
   },
-  {
-    _id: uuid(),
-    bestSelling: false,
-    brandName: "Bata",
-    productName: "Black Formal Shoes",
-    mrp: 2299,
-    offer: 15,
-    price: "",
-    categoryName: "FORMALS",
-    img: "https://res.cloudinary.com/dewisedrc/image/upload/v1697342423/bata-formal-brown_ejeutx.jpg",
-    size: ["7", "8", "9", "10"],
-    rating: "4.7",
-    description: "Black formal shoes for men",
-  },
+
   {
     _id: uuid(),
     bestSelling: false,

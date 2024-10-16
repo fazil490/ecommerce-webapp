@@ -1,13 +1,14 @@
-import { Route, Routes } from "react-router-dom"
-import Home from "./pages/Home"
-import Products from "./pages/Products"
-import Wishlist from "./pages/Wishlist"
-import Cart from "./pages/Cart"
-import Checkout from "./pages/Checkout"
-import Profile from "./pages/Profile"
-import MobileNavbar from "./components/MobileNavbar"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Wishlist from "./pages/Wishlist";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Profile from "./pages/Profile";
+import MobileNavbar from "./components/MobileNavbar";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import SingleProduct from "./pages/SingleProduct";
 
 function App() {
   return (
@@ -19,13 +20,17 @@ function App() {
         <Navbar />
       </div>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/products" element={<Products/>} />
-        <Route path="/products/:category" element={<Products/>} />
-        <Route path="/wishlist" element={<Wishlist/>} />
-        <Route path="/cart" element={<Cart/>} />
-        <Route path="/checkout" element={<Checkout/>} />
-        <Route path="/profile" element={<Profile/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products?category=:category" element={<Products />} />
+        <Route
+          path="/products/:category/:product_id"
+          element={<SingleProduct />}
+        />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>

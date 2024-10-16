@@ -1,16 +1,17 @@
 import { Checkbox } from "@mui/material";
 import { FaChevronDown } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const filterOptions = [
   {
-    name: "Categories",
+    name: "Category",
     items: [
       "Formals",
       "Casuals",
       "Loafers",
       "Sneakers",
-      "Sport Shoes",
+      "Sports",
       "Boots",
     ],
   },
@@ -25,13 +26,26 @@ const filterOptions = [
 ];
 
 const FilterSideBar = () => {
-  const [openAccordian, setOpenAccordian] = useState({});
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [openAccordian, setOpenAccordian] = useState({});  
+
   const handleAccordian = (name) => {
     setOpenAccordian((prev) => ({
       ...prev,
       [name]: !prev[name],
     }));
   };
+
+  useEffect(() => {
+    filterOptions.forEach((option) => {
+      if (searchParams.getAll(option.name.toLowerCase()).length > 0) {
+        setOpenAccordian((prev) => ({
+          ...prev,
+          [option.name]: true,
+        }));
+      }
+    });
+  }, [searchParams]);
 
   return (
     <>
@@ -57,12 +71,17 @@ const FilterSideBar = () => {
           </div>
           {openAccordian[item.name] ? (
             <ul className="text-sm mt-2 font-medium flex flex-col">
-              {item.items.map((item, i) => (
+              {item.items.map((filterItem, i) => (
                 <li key={i}>
                   <span>
-                    <Checkbox size="small" />
+                    <Checkbox
+                      checked={searchParams
+                        .getAll(item.name.toLowerCase())
+                        .includes(filterItem.toLowerCase())}
+                      size="small"
+                    />
                   </span>{" "}
-                  {item}{" "}
+                  {filterItem}{" "}
                 </li>
               ))}
             </ul>

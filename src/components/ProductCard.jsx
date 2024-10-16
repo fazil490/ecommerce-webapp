@@ -1,14 +1,30 @@
 import { FiHeart } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    navigate(`/products/${product?.categoryName.toLowerCase()}/${product?._id}`);
+  };
   return (
-    <div key={product?._id} className="relative w-[230px] rounded-lg shadow-md cursor-pointer transition-transform hover:-translate-y-[6px] duration-300">
+    <div
+      key={product?._id}
+      className="relative w-[230px] h-[300px] bg-white rounded-lg shadow-md cursor-pointer transition-transform hover:-translate-y-[6px] duration-300"
+    >
       <img
+        onClick={() => {
+          handleCardClick();
+        }}
         className="w-[100%] h-[170px] border-b-2 border-creame rounded-t-lg"
         src={product?.img}
         alt=""
       />
-      <button className="absolute top-4 right-4">
+      <button
+        onClick={() => {
+          console.log("liked");
+        }}
+        className="absolute p-1 z-10 top-4 right-4"
+      >
         <FiHeart className="" />
       </button>
       {/* {
@@ -16,7 +32,12 @@ const ProductCard = ({ product }) => {
           Best Seller
         </div> : null
       } */}
-      <div className="bg-white flex flex-col gap-[4px] p-4 rounded-b-lg">
+      <div
+        onClick={() => {
+          console.log("card clicked");
+        }}
+        className="flex flex-col gap-[4px] p-4"
+      >
         <h2 className="font-medium text-gray-500 text-[15px]">
           {product?.brandName}
         </h2>
@@ -24,13 +45,14 @@ const ProductCard = ({ product }) => {
           {product?.productName}
         </h2>
         <div className="flex gap-2 items-center">
-          <p className="font-semibold text-[18px]">
-            {`₹ ` + Math.round(product?.mrp - (product?.mrp * product?.offer) / 100)}
+          <p className="font-semibold text-[18px] text-green">
+            {`₹ ` +
+              Math.round(product?.mrp - (product?.mrp * product?.offer) / 100)}
           </p>
-          <p className="text-sm text-red-600 line-through">
+          <p className="text-sm text-red-600 line-through text-red">
             {`₹ ` + product?.mrp}
           </p>
-          <p className="text-sm text-green-600 font-semibold">
+          <p className="text-sm text-green font-semibold">
             {product?.offer + `% off`}
           </p>
         </div>

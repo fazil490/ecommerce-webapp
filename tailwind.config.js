@@ -11,7 +11,7 @@ module.exports = {
       fontFamily: {
         Montserrat: "Montserrat",
       },
-      backgroundColor: {
+      colors: {
         green: "#15803D",
         lightGreen: "#DCFCE7",
         red: "#E11D48",

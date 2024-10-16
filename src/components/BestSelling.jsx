@@ -6,11 +6,11 @@ const BestSelling = () => {
   );
 
   return (
-    <div className="mx-4 md:mx-6 mt-24">
+    <div className="mx-4 my-6 md:mx-6 mt-24">
       <h2 className="text-center tracking-wider font-medium text-xl lg:text-2xl">
         Best Sellers
       </h2>
-      <div className="mt-10 flex flex-wrap justify-center items-center gap-6 md:w-[80%] mx-auto lg:w-full lg:gap-10 xl:w-3/4">
+      <div className="mt-10 flex flex-wrap justify-center items-center gap-6 md:w-[80%] mx-auto lg:w-full lg:gap-10 xl:w-[65%]">
         {bestSellingProducts.map((product, i) => (
           <ProductCard key={i} product={product} />
         ))}

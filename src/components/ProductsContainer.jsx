@@ -3,23 +3,27 @@ import { BiSort } from "react-icons/bi";
 import ProductCard from "./ProductCard";
 import FilterSideBar from "./FilterSideBar";
 import { products } from "../db/products";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const ProductContainer = () => {
-  const { category } = useParams();
+  const [searchParams] = useSearchParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  console.log(searchParams);
+  
+  const selectedCategory = searchParams.get("category")
+  console.log(selectedCategory);
+  
   useEffect(() => {
-    if (category) {
+    if (selectedCategory) {
       const filtered = products.filter((item) =>
-        item?.categoryName.toLowerCase().includes(category.toLowerCase())
+        item?.categoryName.toLowerCase().includes(selectedCategory.toLowerCase())
       );
       setFilteredProducts(filtered);
     } else {
       setFilteredProducts(products)
     }
-  }, [category]);
+  }, [selectedCategory]);
 
   return (
     <div className="flex border-b-2">
@@ -53,7 +57,7 @@ const ProductContainer = () => {
           </div>
         </div>
 
-        <div className="my-10 flex gap-8 flex-wrap justify-center items-center w-[100%]">
+        <div className="my-10 flex gap-8 flex-wrap justify-center md:justify-start items-center w-[100%]">
           {filteredProducts.map((item, i) => (
             <ProductCard key={i} product={item} />
           ))}

@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-creame text-sa
-    ge">
-      <div className="px-4 lg:px-16 py-8 md:flex justify-between items-start border-b-2">
+    <footer className="bg-creame text-sage">
+      {/* <div className="px-4 lg:px-16 py-8 md:flex justify-between items-start border-b-2">
         <div>
           <h1 className="text-xl lg:text-2xl font-bold mb-8 md:mb-0">BRANDNAME</h1>
         </div>
@@ -42,9 +41,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="px-4 lg:px-16 py-8 md:flex gap-4 justify-center">
-        <p className="pb-4">© 2023 Bottom. All Rights Reserved.</p>
+      </div> */}
+      <div className="bg-lightGreen px-4 lg:px-16 py-8 md:flex md:flex-col items-center gap-4 justify-center">
         <div className="flex gap-8">
           <div>
             <a href="https://github.com/fazil490/ecommerce-webapp">
@@ -62,6 +60,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        <p className="pb-4">© 2023 Bottom. All Rights Reserved.</p>
       </div>
     </footer>
   );
